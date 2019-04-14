@@ -9,7 +9,6 @@ import networkx as nx
 import matplotlib.pyplot as plt 
 from collections import defaultdict
 
-
 def DFS(g, v=None):
     
     infile = open(g)
@@ -23,6 +22,30 @@ def DFS(g, v=None):
     
     plt.subplot(121) 
     nx.draw(g, with_labels=True, font_weight='bold')
+    
+    
+#    dfLabels = []
+#    nextToVisit = []
+#    parents = []
+#    lastDfLabel = 0
+#    stack = []
+#    
+#    for i in range(len(g.nodes)-1):
+#        stack.append(i)
+#        
+#    while stack:
+#        currentNode = stack[-1]
+#        
+#        if (dfLabels[currentNode] == 0):
+#            lastDfLabel += 1
+#            dfLabels[currentNode] = lastDfLabel
+#            
+#        if (nextToVisit[currentNode] == degree[currentNode]):
+#            stack.pop
+#        else:
+            
+    
+    
     
     if v is None:
         nodes = g
@@ -50,6 +73,12 @@ g_dfs = nx.Graph()
                 
 for i, j in DFS('alarm.dgf'):
         g_dfs.add_edge(i, j)
+        
+for i in DFS('alarm.dgf'):
+    print(i)
 
 plt.subplot(122)
-nx.draw(g_dfs, with_labels=True, font_weight='bold')       
+nx.draw(g_dfs, with_labels=True, font_weight='bold')
+
+jumbo = DFS('alarm.dgf')
+print(next(jumbo)[0])
