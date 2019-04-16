@@ -112,7 +112,7 @@ def treeDecomposition(G):
         decomp.add_edge(old_bag, new_bag)
         tree.append(list(nbrs))
     
-    return tree
+    return tree, decomp
         
 
 
@@ -136,12 +136,29 @@ def reidl_td(G_p, t):
         T[i].append(r)
         
     
+    R = reidl_td_rec(G, T, t)
     
+    return R is not None
     
 
 def reidl_td_rec(G, T, t):
-    b = 9
-    R = None
+    R = set()
+    
+    for X in len(T):
+        if (len(X) == 1):
+            r = X[0]
+            F = [r]
+            h = 1
+            R.add((F, {r}, h))
+        elif isForget(X):
+            R.add()
+        elif isIntroduce(X):
+            R.add()    
+        elif isJoin(X):    
+            R.add()
+    
+    return R
+
 
 def reidl_td_simple(G, t):
     infile = open(G)
