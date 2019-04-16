@@ -9,8 +9,10 @@ Created on Sun Apr 14 12:56:45 2019
 import networkx as nx 
 import matplotlib.pyplot as plot 
 from collections import defaultdict
+from networkx.algorithms.approximation import treewidth
 import operator
 import copy
+import itertools
 
 def DFSTree(G, v=None):
     if v is None:
@@ -33,7 +35,113 @@ def DFSTree(G, v=None):
                     stack.append((child,iter(G[child])))
             except StopIteration:
                 stack.pop()
+
+def treeDecomposition(G):
+#    T = nx.Graph()
+#    nodeList = copy.deepcopy(G.nodes())    
+#    tree = list()
+#    
+#    for i in nodeList:
+#        vertex = i
+#        bag = list()
+#        bag.append(vertex)
+#    
+#        for j in T.neighbors(i):
+#            bag.append(j)
+#        tree.append((bag))
+#        T.add_node(frozenset(bag))
+#        G.remove_node(i)
+#        
+#    for n1 in range(len(nodeList)):
+#        checker = False
+#        for n2 in range(n1+1, len(nodeList)):
+#            if checker == False and len(nodeList[n1].intersection(nodeList[n2])) > 0:
+#                T.add_edge(nodeList[n1], nodeList[n2])
+#                checker = True
+#    
+#    nx.draw(T, with_labels=True, font_weight='bold')
+           
+    tree = []
     
+    graph = {n: set(G[n]) - set([n]) for n in G}
+    
+    node_stack = []
+    
+    elim_node = treewidth.min_fill_in_heuristic(graph)
+    
+    while elim_node is not None:
+        neigh = graph[elim_node]
+        for u, v in itertools.permutations(neigh, 2):
+            if v not in graph[u]:
+                graph[u].add(v)
+                
+        node_stack.append((elim_node, neigh))
+        
+        for u in graph[elim_node]:
+            graph[u].remove(elim_node)
+            
+        del graph[elim_node]
+        elim_node = treewidth.min_fill_in_heuristic(graph)
+        
+    decomp = nx.Graph()
+    first_bag = frozenset(graph.keys())
+    tree.append(graph.keys())
+    decomp.add_node(first_bag)    
+    
+    while node_stack:
+        # get node and its neighbors from the stack
+        (curr_node, nbrs) = node_stack.pop()
+
+        # find a bag all neighbors are in
+        old_bag = None
+        for bag in decomp.nodes:
+            if nbrs <= bag:
+                old_bag = bag
+                break
+
+        if old_bag is None:
+            # no old_bag was found: just connect to the first_bag
+            old_bag = first_bag
+
+        # create new node for decomposition
+        nbrs.add(curr_node)
+        new_bag = frozenset(nbrs)
+
+
+        # add edge to decomposition (implicitly also adds the new node)
+        decomp.add_edge(old_bag, new_bag)
+        tree.append(list(nbrs))
+    
+    return tree
+        
+
+
+def reidl_td(G_p, t):
+    
+    T_p = treeDecomposition(G_p)
+    X = T_p[0]
+    r = 'u'
+    
+    G_p.add_node(r)
+    
+    for n in G_p:
+        if (n != r):
+            G_p.add_edge(n, r)
+            
+    G = G_p
+    
+    T = T_p
+    
+    for i in range(len(T)):
+        T[i].append(r)
+        
+    
+    
+    
+
+def reidl_td_rec(G, T, t):
+    b = 9
+    R = None
 
 def reidl_td_simple(G, t):
     infile = open(G)
