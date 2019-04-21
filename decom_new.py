@@ -62,7 +62,7 @@ def td(G):
         
     decomp = nx.Graph()
     first_bag = frozenset(graph.keys())
-    tree.append(list(graph.keys()))
+    tree.append(set(graph.keys()))
     decomp.add_node(first_bag)
     tw = len(first_bag) - 1
     
@@ -93,7 +93,7 @@ def td(G):
 
         # add edge to decomposition (implicitly also adds the new node)
         decomp.add_edge(old_bag, new_bag)
-        tree.append(list(nbrs))
+        tree.append((nbrs))
     
           
 #    print(decomp.nodes)
@@ -178,11 +178,15 @@ def td(G):
     
 poss, ible = td(G)
 
-#print(poss)
 
+print(poss)
+chonga = 0
 for i in ible:
-#    print(i)
 #    print(len(list(ible.neighbors(i))))
     if (len(list(ible.neighbors(i))) == 1):
-        print(i)
-        ossa = 2
+        if (poss[chonga] == i):
+            print(i)
+            chonga += 1
+    else:
+        chonga += 1
+        

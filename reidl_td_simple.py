@@ -85,7 +85,7 @@ def treeDecomposition(G):
         
     decomp = nx.Graph()
     first_bag = frozenset(graph.keys())
-    tree.append(graph.keys())
+    tree.append(set(graph.keys()))
     decomp.add_node(first_bag)    
     
     while node_stack:
@@ -110,52 +110,86 @@ def treeDecomposition(G):
 
         # add edge to decomposition (implicitly also adds the new node)
         decomp.add_edge(old_bag, new_bag)
-        tree.append(list(nbrs))
+        tree.append((nbrs))
     
     return tree, decomp
         
 
-
-def reidl_td(G_p, t):
+def forget(R, X, u):
+    A = set()
     
-    T_p = treeDecomposition(G_p)
-    X = T_p[0]
-    r = 'u'
-    
-    G_p.add_node(r)
-    
-    for n in G_p:
-        if (n != r):
-            G_p.add_edge(n, r)
+    for Fp, Xp, hp in R:
+        restrict = copy.deepcopy(X.remove(u))
+        imp = Xp - restrict
+        
+        for l in Fp:
+            Fp = Fp - imp
             
-    G = G_p
+        if not A:
+            A.add((Fp, Xp, hp))
+        
+        ###########equivalency#########
+        
+    return A
+
+def intro()
+
+def reidl_td(Gp, t):
     
-    T = T_p
+    infile = open(Gp)
+    Gp = nx.Graph()
+
+    for line in infile:
+        edge = (line.split())
+        if edge:
+            if edge[0] == 'e':
+                Gp.add_edge(int(edge[1]), int(edge[2]))
+    
+    Tp, TpDecomp = treeDecomposition(Gp)
+    X = Tp[0]
+    r = 'u'
+    Gp.add_node(r)
+    
+    for n in Gp:
+        if (n != r):
+            Gp.add_edge(n, r)
+            
+    G = Gp.copy()
+    
+    T = copy.deepcopy(Tp)
     
     for i in range(len(T)):
-        T[i].append(r)
+        T[i].add(r)
         
+    chip = 0    
+    for i in TpDecomp:
+        if (len(list(TpDecomp.neighbors(i))) == 1):
+            if (Tp[chip] == i):
+                Tp.append({r})
+                chip += 1
+        else:
+            chip += 1
+        
+    R = reidl_td_rec(G, T, t+1, X)
     
-    R = reidl_td_rec(G, T, t)
-    
-    return R is not None
+    if R:
+        return R
     
 
-def reidl_td_rec(G, T, t):
-    R = set()
+def reidl_td_rec(G, T, t, X):
+    R = None
     
-    for X in len(T):
-        if (len(X) == 1):
-            r = X[0]
-            F = [r]
-            h = 1
-            R.add((F, {r}, h))
-        elif isForget(X):
-            R.add()
-        elif isIntroduce(X):
-            R.add()    
-        elif isJoin(X):    
-            R.add()
+    if (len(X) == 1):
+        r = X[0]
+        F = [r]
+        h = 1
+        R = {(F, {r}, h)}
+    elif isForget(X):
+        forget(R, X, u)
+    elif isIntroduce(X):
+        R.add()    
+    elif isJoin(X):    
+        R.add()
     
     return R
 
@@ -187,10 +221,10 @@ def reidl_td_simple(G, t):
     
     #################return reidl-td()
     
-    P = []
-    subset = [root]
-    pos = 0
-    valList = list(spl.keys())
+#    P = []
+#    subset = [root]
+#    pos = 0
+#    valList = list(spl.keys())
     
 #    for key, value in spl.items():
 #        pos += 1
@@ -209,19 +243,19 @@ def reidl_td_simple(G, t):
 #            if (spl[key] != spl[valList[pos+1]]):
 #                subset.clear()
     
-    for i in range(1, len(spl)):
-        if spl[valList[i]] != spl[valList[i-1]] and spl[valList[i]] != spl[valList[i+1]]:
-            subset.append(valList[i])
-        elif (spl[valList[i]] != spl[valList[i-1]] and spl[valList[i]] == spl[valList[i+1]]):
-            P.append(copy.deepcopy(subset))
-            subset.clear()
-#            subset.append(P[-1][-1])
-            subset.append(spl[valList[i]])
-        elif (spl[valList[i]] == spl[valList[i-1]] and spl[valList[i]] != spl[valList[i+1]]):
-            subset.append(spl[valList[i]])
-            P.append(copy.deepcopy(subset))
-            subset.clear()
-        
+#    for i in range(1, len(spl)):
+#        if spl[valList[i]] != spl[valList[i-1]] and spl[valList[i]] != spl[valList[i+1]]:
+#            subset.append(valList[i])
+#        elif (spl[valList[i]] != spl[valList[i-1]] and spl[valList[i]] == spl[valList[i+1]]):
+#            P.append(copy.deepcopy(subset))
+#            subset.clear()
+##            subset.append(P[-1][-1])
+#            subset.append(spl[valList[i]])
+#        elif (spl[valList[i]] == spl[valList[i-1]] and spl[valList[i]] != spl[valList[i+1]]):
+#            subset.append(spl[valList[i]])
+#            P.append(copy.deepcopy(subset))
+#            subset.clear()
+#        
     
     
     print(P)
