@@ -2,3 +2,6 @@
 \__pycache__/
 .DS_Store
 \faq.html
+\minisat/
+\temp/
+\glucose-syrup/

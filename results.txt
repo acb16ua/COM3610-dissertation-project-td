@@ -1,0 +1,473 @@
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Folkman 
+|V| = 20 
+|E| = 40 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.021664
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Paley17 
+|V| = 17 
+|E| = 68 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.037597
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = McGee 
+|V| = 24 
+|E| = 36 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.030077
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Goldner 
+|V| = 11 
+|E| = 27 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 276.744464
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Hoffman 
+|V| = 16 
+|E| = 32 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.038449
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Poussin 
+|V| = 15 
+|E| = 39 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.028154
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Robertson 
+|V| = 19 
+|E| = 38 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.045572
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Brinkmann 
+|V| = 21 
+|E| = 42 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.022445
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Sousselier 
+|V| = 16 
+|E| = 27 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033832
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = 4x4-grid 
+|V| = 16 
+|E| = 24 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033101
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Butterfly 
+|V| = 5 
+|E| = 6 
+Algorithm = 2^n 
+
+Tree-depth = 3
+CPU Time = 0.016189
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Kittell 
+|V| = 23 
+|E| = 63 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.027964
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Moser 
+|V| = 7 
+|E| = 11 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 0.093126
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = tri 
+|V| = 3 
+|E| = 3 
+Algorithm = 2^n 
+
+Tree-depth = 3
+CPU Time = 0.001312
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Clebsch 
+|V| = 16 
+|E| = 40 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.029257
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Pappus 
+|V| = 18 
+|E| = 27 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.031838
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Herschel 
+|V| = 11 
+|E| = 18 
+Algorithm = 2^n 
+
+Tree-depth = 6
+CPU Time = 161.180418
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Prism 
+|V| = 6 
+|E| = 9 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 0.032320
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Tietze 
+|V| = 12 
+|E| = 18 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033773
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Diamond 
+|V| = 4 
+|E| = 5 
+Algorithm = 2^n 
+
+Tree-depth = 3
+CPU Time = 0.011924
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Paley13 
+|V| = 13 
+|E| = 39 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.023112
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Pmin 
+|V| = 9 
+|E| = 12 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 2.053461
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Bull 
+|V| = 5 
+|E| = 5 
+Algorithm = 2^n 
+
+Tree-depth = 3
+CPU Time = 0.013283
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Petersen 
+|V| = 10 
+|E| = 15 
+Algorithm = 2^n 
+
+Tree-depth = 6
+CPU Time = 19.329847
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Shrikhande 
+|V| = 16 
+|E| = 48 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.037533
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Wagner 
+|V| = 8 
+|E| = 12 
+Algorithm = 2^n 
+
+Tree-depth = 6
+CPU Time = 0.509155
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Dodecahedron 
+|V| = 20 
+|E| = 30 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.048137
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = 3x3-grid 
+|V| = 9 
+|E| = 12 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 1.701626
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Frucht 
+|V| = 12 
+|E| = 18 
+Algorithm = 2^n 
+
+Tree-depth = 6
+CPU Time = 459.460587
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Durer 
+|V| = 12 
+|E| = 18 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.050073
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Desargues 
+|V| = 20 
+|E| = 30 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.029140
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Chvatal 
+|V| = 12 
+|E| = 24 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.036593
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Watsin 
+|V| = 50 
+|E| = 75 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.036717
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Nauru 
+|V| = 24 
+|E| = 36 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033973
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = 5x5-grid 
+|V| = 25 
+|E| = 39 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033200
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = path4 
+|V| = 3 
+|E| = 2 
+Algorithm = 2^n 
+
+Tree-depth = 2
+CPU Time = 0.011892
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = B10Cage 
+|V| = 70 
+|E| = 105 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.035117
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Ellingham 
+|V| = 78 
+|E| = 117 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.038375
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = FlowerSnark 
+|V| = 20 
+|E| = 30 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.038182
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Errera 
+|V| = 17 
+|E| = 45 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.044809
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Franklin 
+|V| = 12 
+|E| = 18 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.035673
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Grotzsch 
+|V| = 11 
+|E| = 20 
+Algorithm = 2^n 
+
+Tree-depth = 7
+CPU Time = 255.989286
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = Holt 
+|V| = 27 
+|E| = 54 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.036290
