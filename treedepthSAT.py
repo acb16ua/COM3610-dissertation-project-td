@@ -15,6 +15,7 @@ from satispy.solver import Minisat
 import time
 import pycosat
 from pathlib import Path
+#from fomin import *
 
 def apex_vertex(g):
     buff = 0
@@ -105,8 +106,6 @@ def decode_output(sol,g,width):
     with open(sol, 'r') as out_file:
         out = out_file.read()
     out = out.split('\n')
-    if out[0] == 'UNSAT':
-        return
     out = out[1]
     out = out.split(' ')
     out = list(map(int, out))
@@ -232,7 +231,9 @@ def show_graph(graph, layout, nolabel=0):
     
     
 def main():
-    instance = 'famous/Pappus.edge/'
+    cpu_time = time.time()
+#    instance = 'famous/Holt.edge/'
+    instance = 'graphs/celar09pp.dgf/'
 #    instance = 'alarm.dgf'
 #    instance = 'alarm.dgf'
     instance = os.path.realpath(instance)
@@ -253,9 +254,10 @@ def main():
     instance = instance.split('.')
     instance = instance[0]
     
+    timeout = 500
     n = g.number_of_nodes()
     m = g.number_of_edges()
-
+    prep_time = time.time()
     g=degree_one_reduction(g=g)
     buff = 0
     lb = 0
@@ -285,7 +287,7 @@ def main():
             sol = temp + instance + '_' + str(i) + '.sol'
 #            Path(temp + instance + '_' + str(i) + '.txt').touch()
 #            anotherSol = temp + instance + '_' + str(i) + '.txt'
-            cmd = [solver, cnf, sol]
+            cmd = [solver, '-cpu-lim=%i' % timeout, cnf, sol]
             # print cmd
             solving = time.time()
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -295,17 +297,22 @@ def main():
             solving_time.append(solving)
             sys.stderr.write('*' * 10+'\n')
 #            print(output)
-            print(err)
+#            print(err)
             sys.stderr.write("\n%i %i\n"%(i-1, rc))
-            if rc == 20:
+            if rc == 0:
                 to = True
                 if lb == 0:
                     ub = i
             if rc == 10:
                 if to:
+                    ub = i
                     lb = i-2
                 decode_output(sol=sol, g=g, width=i)
-            print(i-2, lb, ub, to)
+                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    encoding_time), sum(solving_time), end=' ')
+                for j in solving_time:
+                    print(j, end=' ')
+#            print(i-2, lb, ub, to)
 
 #                exit(0)
 

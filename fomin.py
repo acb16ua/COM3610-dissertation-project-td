@@ -16,6 +16,7 @@ from networkx.algorithms.approximation import treewidth
 import itertools
 import time
 import os
+import operator
 
 class TimeoutError(RuntimeError):
     pass
@@ -24,6 +25,41 @@ def handler(signum, frame):
     print("Timeout exception")
 #    raise Exception("end of time!!")
     raise TimeoutError()
+
+def DFSTree(G, v=None):
+    if v is None:
+        nodes = G
+    else:
+        nodes = [v]
+    visited=set()
+    for start in nodes:
+        if start in visited:
+            continue
+        visited.add(start)
+        stack = [(start,iter(G[start]))]
+        while stack:
+            parent,children = stack[-1]
+            try:
+                child = next(children)
+                if child not in visited:
+                    yield parent,child
+                    visited.add(child)
+                    stack.append((child,iter(G[child])))
+            except StopIteration:
+                stack.pop()
+                
+def tw(G):
+    H = G.copy()
+    
+    maxmin = 0
+    
+    while (len(H.nodes) >= 2):
+        v = min(H.degree, key=operator.itemgetter(1))[0]
+        maxmin = max(maxmin, H.degree[v])
+        H.remove_node(v)
+        
+    return maxmin    
+
         
 def td(G):
     
@@ -55,8 +91,6 @@ def td(G):
             someList2.append(td(i))
 
         depth = max(someList2)
-        
-        
         
 #    print(depth)
     
@@ -168,9 +202,9 @@ def treeDecomposition(G):
 def original(): 
     samples = []
     
-    path = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/famous'
-    filenames = glob.glob(path + '/*.edge')
-    resultFile = open('results.txt', 'a+')
+    path = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/graphs'
+    filenames = glob.glob(path + '/*.dgf')
+    resultFile = open('results_graph.txt', 'a+')
     for filename in filenames:
         cpu_time = time.time()
     #    print(filename)
@@ -189,6 +223,18 @@ def original():
                     
         samples.append(G)
         
+        lb = tw(G)
+        
+        dfs = nx.Graph()
+        for i, j in DFSTree(G):
+            dfs.add_edge(i, j)
+            
+        for node in dfs.nodes:
+            spl = nx.shortest_path_length(dfs, node)
+            break
+        
+        ub = max(spl.items(), key=operator.itemgetter(1))[1]
+        
     #    signal.signal(signal.SIGALRM, handler)
     #    
     #    signal.alarm(5)
@@ -200,7 +246,7 @@ def original():
         
         try:
             signal.signal(signal.SIGALRM, handler)
-            signal.alarm(1)
+            signal.alarm(500)
             result = td(G)
         except TimeoutError as ex:
             print(':(')
@@ -214,27 +260,34 @@ def original():
         else:
             resultFile.write('\nTree-depth = TIMEOUT EXCEPTION\n')
             resultFile.write('CPU Time = %f\n' %(cpu_time))
+            resultFile.write('Lowerbound = %i\n' %(lb))
+            resultFile.write('Upperbound = %i\n' %(ub))
         
     resultFile.close()
  
 
 
-infile = open('Moser.edge')
-        
-G = nx.Graph()
-
-result = 0
-
-for line in infile:
-    edge = (line.split())
-    if edge:
-        if edge[0] == 'e':
-            G.add_edge((edge[1]), (edge[2]))
-          
-G_Dfs = nx.dfs_tree(G)
-G_Dfs = nx.DiGraph.to_undirected(G_Dfs)
-diameter = nx.eccentricity(G_Dfs)
-td_upper = max(list(diameter.values()))
+#infile = open('Moser.edge')
+#        
+#G = nx.Graph()
+#
+#result = 0
+#
+#for line in infile:
+#    edge = (line.split())
+#    if edge:
+#        if edge[0] == 'e':
+#            G.add_edge((edge[1]), (edge[2]))
+#          
+#G_Dfs = nx.dfs_tree(G)
+#G_Dfs = nx.DiGraph.to_undirected(G_Dfs)
+#diameter = nx.eccentricity(G_Dfs)
+#td_upper = max(list(diameter.values()))
+    
+    
+    
+    
+    
 #Se = list()
 #X = set()
 #e = 0.2

@@ -35,6 +35,13 @@ def DFSTree(G, v=None):
                     stack.append((child,iter(G[child])))
             except StopIteration:
                 stack.pop()
+                
+    Y = nx.Graph()
+    
+    for i, j in DFSTree(G):
+        Y.add_edge(i, j)
+        
+    return Y
 
 def treeDecomposition(G):
 #    T = nx.Graph()
@@ -132,7 +139,7 @@ def forget(R, X, u):
         
     return A
 
-def intro()
+
 
 def reidl_td(Gp, t):
     

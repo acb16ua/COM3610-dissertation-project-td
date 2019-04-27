@@ -1,0 +1,705 @@
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = inithx 
+|V| = 363 
+|E| = 8897 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.718184
+Lowerbound = 31
+Upperbound = 67
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = queen5_5 
+|V| = 25 
+|E| = 160 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.038341
+Lowerbound = 12
+Upperbound = 24
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = queen7_7 
+|V| = 49 
+|E| = 476 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.028970
+Lowerbound = 18
+Upperbound = 48
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = water 
+|V| = 32 
+|E| = 123 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.039310
+Lowerbound = 6
+Upperbound = 24
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = oesoca+ 
+|V| = 67 
+|E| = 208 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.037412
+Lowerbound = 9
+Upperbound = 30
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = david-pp 
+|V| = 29 
+|E| = 191 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.033139
+Lowerbound = 10
+Upperbound = 26
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = inithx 
+|V| = 559 
+|E| = 13969 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 501.393250
+Lowerbound = 31
+Upperbound = 68
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = fpsol2 
+|V| = 363 
+|E| = 8688 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.400100
+Lowerbound = 31
+Upperbound = 70
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = oesoca+-pp 
+|V| = 14 
+|E| = 75 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.040553
+Lowerbound = 9
+Upperbound = 13
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = fpsol2 
+|V| = 363 
+|E| = 8691 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.614862
+Lowerbound = 31
+Upperbound = 69
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = barley 
+|V| = 48 
+|E| = 126 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.043818
+Lowerbound = 5
+Upperbound = 36
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = inithx 
+|V| = 558 
+|E| = 13979 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 501.402731
+Lowerbound = 31
+Upperbound = 67
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = alarm 
+|V| = 37 
+|E| = 65 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.040031
+Lowerbound = 4
+Upperbound = 17
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = fpsol2 
+|V| = 269 
+|E| = 11654 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.555611
+Lowerbound = 64
+Upperbound = 124
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = inithx 
+|V| = 519 
+|E| = 18707 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 501.911042
+Lowerbound = 55
+Upperbound = 128
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mulsol 
+|V| = 176 
+|E| = 3973 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.128800
+Lowerbound = 31
+Upperbound = 62
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = munin2-wpp 
+|V| = 317 
+|E| = 674 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.068616
+Lowerbound = 3
+Upperbound = 80
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = celar02 
+|V| = 100 
+|E| = 311 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.054344
+Lowerbound = 9
+Upperbound = 59
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = queen6_6 
+|V| = 36 
+|E| = 290 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.046065
+Lowerbound = 15
+Upperbound = 34
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = oesoca42 
+|V| = 42 
+|E| = 72 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.047022
+Lowerbound = 3
+Upperbound = 15
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = myciel3 
+|V| = 11 
+|E| = 20 
+Algorithm = 2^n 
+
+Tree-depth = 7
+CPU Time = 257.366464
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mainuk-pp 
+|V| = 9 
+|E| = 28 
+Algorithm = 2^n 
+
+Tree-depth = 7
+CPU Time = 4.981482
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = pathfinder 
+|V| = 109 
+|E| = 211 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.044075
+Lowerbound = 5
+Upperbound = 15
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = miles500 
+|V| = 128 
+|E| = 1170 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.075941
+Lowerbound = 19
+Upperbound = 91
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = munin4 
+|V| = 1041 
+|E| = 1843 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.325887
+Lowerbound = 4
+Upperbound = 100
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = DSJR500 
+|V| = 221 
+|E| = 23512 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.931063
+Lowerbound = 206
+Upperbound = 219
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = munin1 
+|V| = 189 
+|E| = 366 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.058731
+Lowerbound = 4
+Upperbound = 75
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = myciel5 
+|V| = 47 
+|E| = 236 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.034477
+Lowerbound = 8
+Upperbound = 31
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = munin3 
+|V| = 1044 
+|E| = 1745 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.312706
+Lowerbound = 3
+Upperbound = 75
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = anna-pp 
+|V| = 22 
+|E| = 148 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.029933
+Lowerbound = 9
+Upperbound = 21
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = pathfinder-pp 
+|V| = 12 
+|E| = 43 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.025755
+Lowerbound = 5
+Upperbound = 11
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = celar07 
+|V| = 200 
+|E| = 817 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.073030
+Lowerbound = 11
+Upperbound = 111
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = munin2 
+|V| = 1003 
+|E| = 1662 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.291435
+Lowerbound = 3
+Upperbound = 115
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = myciel4 
+|V| = 23 
+|E| = 71 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.042270
+Lowerbound = 5
+Upperbound = 16
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = fpsol2 
+|V| = 233 
+|E| = 10783 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.429062
+Lowerbound = 64
+Upperbound = 116
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = MCSTestGraph2 
+|V| = 9 
+|E| = 13 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 1.083766
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = miles250 
+|V| = 125 
+|E| = 387 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.044392
+Lowerbound = 7
+Upperbound = 55
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = LabeledTest 
+|V| = 7 
+|E| = 11 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 0.139826
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = DSJC125 
+|V| = 125 
+|E| = 6961 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.272213
+Lowerbound = 103
+Upperbound = 123
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = ship-ship-pp 
+|V| = 30 
+|E| = 77 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.024449
+Lowerbound = 4
+Upperbound = 24
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = inithx 
+|V| = 317 
+|E| = 12720 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.698944
+Lowerbound = 55
+Upperbound = 121
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = eil51 
+|V| = 51 
+|E| = 140 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.047516
+Lowerbound = 4
+Upperbound = 41
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = david 
+|V| = 87 
+|E| = 406 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.037251
+Lowerbound = 10
+Upperbound = 49
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mildew 
+|V| = 35 
+|E| = 80 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.040274
+Lowerbound = 3
+Upperbound = 24
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = huck 
+|V| = 74 
+|E| = 301 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.043616
+Lowerbound = 10
+Upperbound = 27
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = anna 
+|V| = 134 
+|E| = 423 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.046526
+Lowerbound = 7
+Upperbound = 38
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = miles1500 
+|V| = 128 
+|E| = 5198 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.166520
+Lowerbound = 72
+Upperbound = 127
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mulsol 
+|V| = 119 
+|E| = 2556 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.103339
+Lowerbound = 31
+Upperbound = 59
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = MCSTestGraph 
+|V| = 7 
+|E| = 11 
+Algorithm = 2^n 
+
+Tree-depth = 5
+CPU Time = 0.090656
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mainuk 
+|V| = 48 
+|E| = 198 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.036998
+Lowerbound = 7
+Upperbound = 25
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = barley-pp 
+|V| = 26 
+|E| = 78 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.034780
+Lowerbound = 5
+Upperbound = 22
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = celar09pp 
+|V| = 67 
+|E| = 165 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.050583
+Lowerbound = 7
+Upperbound = 10
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = graph09 
+|V| = 458 
+|E| = 1667 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.258877
+Lowerbound = 8
+Upperbound = 388
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = jean 
+|V| = 77 
+|E| = 254 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.026513
+Lowerbound = 9
+Upperbound = 36
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = oesoca 
+|V| = 39 
+|E| = 67 
+Algorithm = 2^n 
+
+Tree-depth = TIMEOUT EXCEPTION
+CPU Time = 500.040298
+Lowerbound = 3
+Upperbound = 14
