@@ -1,0 +1,208 @@
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = alarm 
+|V| = 36 
+|E| = 64 
+Algorithm = SAT 
+
+Tree-depth = 7
+CPU Time = 48.126997
+Lowerbound = 6
+Upperbound = 8
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = alarm 
+|V| = 36 
+|E| = 64 
+Algorithm = SAT 
+
+Tree-depth = 7
+CPU Time = 49.155722
+Lowerbound = 6
+Upperbound = 8
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = anna-pp 
+|V| = 20 
+|E| = 107 
+Algorithm = SAT 
+
+Tree-depth = 13
+CPU Time = 685.198458
+Lowerbound = 12
+Upperbound = 14
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = barley-pp 
+|V| = 26 
+|E| = 78 
+Algorithm = SAT 
+
+Tree-depth = 11
+CPU Time = 138.328581
+Lowerbound = 10
+Upperbound = 12
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = barley 
+|V| = 48 
+|E| = 126 
+Algorithm = SAT 
+
+Tree-depth = 12
+CPU Time = 1789.741142
+Lowerbound = 13
+Upperbound = 15
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = celar09pp 
+|V| = 67 
+|E| = 165 
+Algorithm = SAT 
+
+Tree-depth = 8
+CPU Time = 1071.014141
+Lowerbound = 7
+Upperbound = 9
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = david-pp 
+|V| = 28 
+|E| = 163 
+Algorithm = SAT 
+
+Tree-depth = 17
+CPU Time = 2511.564413
+Lowerbound = 16
+Upperbound = 18
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = eil51 
+|V| = 51 
+|E| = 140 
+Algorithm = SAT 
+
+Tree-depth = 21
+CPU Time = 6456.429839
+Lowerbound = 20
+Upperbound = 22
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = LabeledTest 
+|V| = 7 
+|E| = 11 
+Algorithm = SAT 
+
+Tree-depth = 5
+CPU Time = 0.157078
+Lowerbound = 4
+Upperbound = 6
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mainuk 
+|V| = 48 
+|E| = 198 
+Algorithm = SAT 
+
+Tree-depth = 16
+CPU Time = 2960.228589
+Lowerbound = 15
+Upperbound = 17
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mainuk-pp 
+|V| = 9 
+|E| = 28 
+Algorithm = SAT 
+
+Tree-depth = 7
+CPU Time = 0.234532
+Lowerbound = 6
+Upperbound = 8
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = MCSTestGraph 
+|V| = 7 
+|E| = 11 
+Algorithm = SAT 
+
+Tree-depth = 5
+CPU Time = 0.143116
+Lowerbound = 4
+Upperbound = 6
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = MCSTestGraph2 
+|V| = 9 
+|E| = 13 
+Algorithm = SAT 
+
+Tree-depth = 5
+CPU Time = 0.212676
+Lowerbound = 4
+Upperbound = 6
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = mildew 
+|V| = 35 
+|E| = 80 
+Algorithm = SAT 
+
+Tree-depth = 9
+CPU Time = 65.459469
+Lowerbound = 8
+Upperbound = 10
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = myciel3 
+|V| = 11 
+|E| = 20 
+Algorithm = SAT 
+
+Tree-depth = 7
+CPU Time = 0.359721
+Lowerbound = 6
+Upperbound = 8
+
+
+-----------------------------------------
+CONDITIONS: 
+Graph file = myciel4 
+|V| = 23 
+|E| = 71 
+Algorithm = SAT 
+
+Tree-depth = 13
+CPU Time = 1139.551175
+Lowerbound = 12
+Upperbound = 14

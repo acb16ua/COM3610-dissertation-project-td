@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
+Created on Sun Apr 28 13:06:44 2019
+
+@author: uddhav
+"""
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
 Created on Tue Apr 23 13:36:26 2019
 
 @author: uddhav
@@ -231,120 +239,117 @@ def show_graph(graph, layout, nolabel=0):
     plt.show()
     
     
-def main():
-    path = '/Users/uddhav/University/NewStuff/ThirdYear/test'
-    filenames = glob.glob(path + '/*.dgf')
-#    resultFile = open('results_SAT_famous.txt', 'a+')
-    
-    for filename in filenames:
-        
-        resultFile = open('results_SAT_DIMACS.txt', 'a+')
+def main():     
+    resultFile = open('results_SAT_LibTW.txt', 'a+')
+    cpu_time = time.time()
+#    instance = 'famous/Paley13.edge/'
+    instance = 'graphs/myciel4.dgf/'
+    instance = os.path.realpath(instance)
     
     
-        cpu_time = time.time()
-    #    instance = 'famous/Paley13.edge/'
-#        instance = 'graphs/graph09.dgf/'
-#        instance = os.path.realpath(instance)
-        instance = filename
-        
-        d = -1
-        solver = "/usr/local/Cellar/minisat/2.2.0_2/bin/minisat"
-        width = -1
-        temp = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/temp/'
-        infile = open(instance)
-        g = nx.Graph()
-    
-        for line in infile:
-            edge = (line.split())
-            if edge:
-                if edge[0] == 'e':
-                    g.add_edge((edge[1]), (edge[2]))
-                    
-        instance = os.path.basename(instance)
-        instance = instance.split('.')
-        instance = instance[0]
-        
-        timeout = 500
-        n = g.number_of_nodes()
-        m = g.number_of_edges()
-        prep_time = time.time()
-        g=degree_one_reduction(g=g)
-        buff = 0
-        lb = 0
-        ub = 0
-        to = True
-        g,buff=apex_vertex(g=g)
-    
-        print('treedepthp2sat', instance, n, m,g.number_of_nodes(),buff)
-        if g.number_of_nodes() <= 1:
-            print(lb,ub,to)
-            exit(0)
-        encoding_time = list()
-        solving_time = list()
-        g=nx.relabel.convert_node_labels_to_integers(g,first_label=0)
-        if width == -1:
-            for i in range(g.number_of_nodes()+2,1,-1):
-                encode_time = time.time()
-                encoding = generate_encoding(g, i)
-                cnf = temp + instance + '_' + str(i) + ".cnf"
-                with open(cnf, 'w') as ofile:
-                    ofile.write(encoding)
-                # with open(cnf,'r') as ifile:
-                #     s=ifile.read()
-                #     print s
-                encode_time = time.time() - encode_time
-                encoding_time.append(encode_time)
-                sol = temp + instance + '_' + str(i) + '.sol'
-    #            Path(temp + instance + '_' + str(i) + '.txt').touch()
-    #            anotherSol = temp + instance + '_' + str(i) + '.txt'
-                cmd = [solver, '-cpu-lim=%i' % timeout, cnf, sol]
-                # print cmd
-                solving = time.time()
-                p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-                output, err = p.communicate()
-                rc = p.returncode
-                solving = time.time() - solving
-                solving_time.append(solving)
-                sys.stderr.write('*' * 10+'\n')
-    #            print(output)
-    #            print(err)
-    
-                time_out = list()
+    d = -1
+    solver = "/usr/local/Cellar/minisat/2.2.0_2/bin/minisat"
+    width = -1
+    temp = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/temp/'
+    infile = open(instance)
+    g = nx.Graph()
+
+    for line in infile:
+        edge = (line.split())
+        if edge:
+            if edge[0] == 'e':
+                g.add_edge((edge[1]), (edge[2]))
                 
-                sys.stderr.write("\n%i %i\n"%(i-1, rc))
-                if rc == 20:
-                    to = False
-                    if lb == 0:
-                        ub = i
-                    print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
-                        encoding_time), sum(solving_time), end=' ')
-                    time_out.append(time.time() - cpu_time)
-#                    print(max(time_out))
-                if rc == 10:
-                    if to:
-                        ub = i
-                        lb = i-2
-                    decode_output(sol=sol, g=g, width=i)
-                    print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
-                        encoding_time), sum(solving_time), end=' ')
-                    td_final = i-1
-                    lb_final = lb
-                    ub_final = ub
-        print(td_final)
-    #                for j in solving_time:
-    #                    print(j, end=' ')
-    #            print(i-2, lb, ub, to)
+    instance = os.path.basename(instance)
+    instance = instance.split('.')
+    instance = instance[0]
     
-    #                exit(0)
-        print(max(time_out))
-        resultFile.write('\n\n-----------------------------------------')
-        resultFile.write('\nCONDITIONS: \nGraph file = %s \n|V| = %i \n|E| = %i \nAlgorithm = SAT \n' % (instance, len(g.nodes),len(g.edges)))
-        resultFile.write('\nTree-depth = %i\n' %(td_final))
-        resultFile.write('CPU Time = %f\n' %(max(time_out)))
-        resultFile.write('Lowerbound = %i\n' %(lb_final))
-        resultFile.write('Upperbound = %i\n' %(ub_final))
+    timeout = 500
+    n = g.number_of_nodes()
+    m = g.number_of_edges()
+    prep_time = time.time()
+    g=degree_one_reduction(g=g)
+    buff = 0
+    lb = 0
+    ub = 0
+    to = True
+    g,buff=apex_vertex(g=g)
+
+    print('treedepthp2sat', instance, n, m,g.number_of_nodes(),buff)
+    if g.number_of_nodes() <= 1:
+        print(lb,ub,to)
+        exit(0)
+    encoding_time = list()
+    solving_time = list()
+    g=nx.relabel.convert_node_labels_to_integers(g,first_label=0)
+    if width == -1:
+        for i in range(g.number_of_nodes()+2,1,-1):
+            encode_time = time.time()
+            encoding = generate_encoding(g, i)
+            cnf = temp + instance + '_' + str(i) + ".cnf"
+            with open(cnf, 'w') as ofile:
+                ofile.write(encoding)
+            # with open(cnf,'r') as ifile:
+            #     s=ifile.read()
+            #     print s
+            encode_time = time.time() - encode_time
+            encoding_time.append(encode_time)
+            sol = temp + instance + '_' + str(i) + '.sol'
+#            Path(temp + instance + '_' + str(i) + '.txt').touch()
+#            anotherSol = temp + instance + '_' + str(i) + '.txt'
+            cmd = [solver, '-cpu-lim=%i' % timeout, cnf, sol]
+            # print cmd
+            solving = time.time()
+            p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            output, err = p.communicate()
+            rc = p.returncode
+            solving = time.time() - solving
+            solving_time.append(solving)
+            sys.stderr.write('*' * 10+'\n')
+#            print(output)
+#            print(err)
+
+            time_out = list()
             
-        resultFile.close()
+            sys.stderr.write("\n%i %i\n"%(i-1, rc))
+            if rc == 20:
+                to = False
+                if lb == 0:
+                    ub = i
+                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    encoding_time), sum(solving_time), end=' ')
+                time_out.append(time.time() - cpu_time)
+            if rc == 0:
+                to = False
+                if lb == 0:
+                    ub = i
+                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    encoding_time), sum(solving_time), end=' ')
+                time_out.append(time.time() - cpu_time)    
+            if rc == 10:
+                if to:
+                    ub = i
+                    lb = i-2
+                decode_output(sol=sol, g=g, width=i)
+                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    encoding_time), sum(solving_time), end=' ')
+                td_final = i-1
+                lb_final = lb
+                ub_final = ub
+    print(td_final)
+    print(max(time_out))
+    print(lb_final)
+    print(ub_final)
+    
+    resultFile.write('\n\n-----------------------------------------')
+    resultFile.write('\nCONDITIONS: \nGraph file = %s \n|V| = %i \n|E| = %i \nAlgorithm = SAT \n' % (instance, len(g.nodes),len(g.edges)))
+    resultFile.write('\nTree-depth = %i\n' %(td_final))
+    resultFile.write('CPU Time = %f\n' %(max(time_out)))
+    resultFile.write('Lowerbound = %i\n' %(lb_final))
+    resultFile.write('Upperbound = %i\n' %(ub_final))
+        
+    resultFile.close()
+
 
 if __name__ == "__main__":
     main()
