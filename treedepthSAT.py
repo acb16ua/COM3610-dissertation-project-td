@@ -11,12 +11,13 @@ import matplotlib.pyplot as plt
 import os
 import numpy as np
 import subprocess
-from satispy.solver import Minisat
+# from satispy.solver import Minisat
 import time
-import pycosat
+# import pycosat
 from pathlib import Path
 import glob
 #from fomin import *
+import argparse
 
 def apex_vertex(g):
     buff = 0
@@ -198,6 +199,20 @@ def verify_decomp(g, s, width, root):
     sys.stderr.flush()
 
 
+def parse_args():
+    parser = argparse.ArgumentParser(description='%(prog)s -f instance')
+    parser.add_argument('-f', '--file', dest='instance', action='store', type=lambda x: os.path.realpath(x),
+                        default=None, help='instance')
+    parser.add_argument('-o', '--timeout', dest='timeout', action='store', type=int, default=500,
+                        help='timeout for each SAT call')
+    parser.add_argument('-t', '--temp', dest='temp', action='store', type=str, default='/home/neha/temp/',
+                        help='temporary folder')
+    parser.add_argument('-s', '--solver', dest='solver', action='store', type=str, default='glucose',
+                        help='SAT solver')
+    args = parser.parse_args()
+    return args
+
+
 def show_graph(graph, layout, nolabel=0):
     """ show graph
     layout 1:graphviz,
@@ -238,7 +253,7 @@ def main():
     
     for filename in filenames:
         
-        resultFile = open('results_SAT_DIMACS.txt', 'a+')
+        resultFile = open('results_SAT_LibTW_big_final.txt', 'a+')
     
     
         cpu_time = time.time()
@@ -264,7 +279,7 @@ def main():
         instance = instance.split('.')
         instance = instance[0]
         
-        timeout = 500
+        timeout = 2
         n = g.number_of_nodes()
         m = g.number_of_edges()
         prep_time = time.time()
@@ -319,6 +334,14 @@ def main():
                     print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
                         encoding_time), sum(solving_time), end=' ')
                     time_out.append(time.time() - cpu_time)
+                    
+                if rc == 0:
+                    to = False
+                    if lb == 0:
+                        ub = i
+                    print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                        encoding_time), sum(solving_time), end=' ')
+                    time_out.append(time.time() - cpu_time)    
 #                    print(max(time_out))
                 if rc == 10:
                     if to:
@@ -337,6 +360,7 @@ def main():
     
     #                exit(0)
         print(max(time_out))
+        print('END')
         resultFile.write('\n\n-----------------------------------------')
         resultFile.write('\nCONDITIONS: \nGraph file = %s \n|V| = %i \n|E| = %i \nAlgorithm = SAT \n' % (instance, len(g.nodes),len(g.edges)))
         resultFile.write('\nTree-depth = %i\n' %(td_final))

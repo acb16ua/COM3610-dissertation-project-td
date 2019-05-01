@@ -3,7 +3,7 @@
 """
 Created on Tue Apr 23 13:36:26 2019
 
-@author: uddhav
+@author: 
 """
 import networkx as nx
 import sys
@@ -213,17 +213,17 @@ def main():
     args = parse_args()
     resultFile = open('results_SAT.txt', 'a+')
     cpu_time = time.time()
-    instance = 'graphs/myciel5.dgf/'
-#    instance = args.instance
+#    instance = 'graphs/myciel5.dgf/'
+    instance = args.instance
     instance = os.path.realpath(instance)
     
     
     d = -1
-    solver = "/usr/local/Cellar/minisat/2.2.0_2/bin/minisat"
-#    solver = args.solver
+#    solver = "/usr/local/Cellar/minisat/2.2.0_2/bin/minisat"
+    solver = args.solver
     width = -1
-    temp = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/temp/'
-#    temp = args.temp
+#    temp = '/Users/uddhav/University/NewStuff/ThirdYear/COM3610/temp/'
+    temp = args.temp
     infile = open(instance)
     g = nx.Graph()
 
@@ -237,8 +237,8 @@ def main():
     instance = instance.split('.')
     instance = instance[0]
     
-    timeout = 200
-#    timeout = args.timeout
+#    timeout = 200
+    timeout = args.timeout
     n = g.number_of_nodes()
     m = g.number_of_edges()
     prep_time = time.time()
