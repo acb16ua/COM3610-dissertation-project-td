@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Apr 23 13:36:26 2019
+###################################
+THE FOLLOWING CODE WAS DOWNLOADED FROM GITHUB: 
+https://github.com/nehal73/TCW_TD_to_SAT    
+    
+AS PART OF THE ORIGINAL PAPER BY:
+Ganian, Robert & Lodha, Neha & 
+Ordyniak, Sebastian & Szeider, Stefan. (2019). 
+SAT-Encodings for Treecut Width and Treedepth. 10.1137/1.9781611975499.10.
 
-@author: 
+***this code has been tweaked to meet 
+the needs of this project by Uddhav Agarwal***      
+###################################
 """
 import networkx as nx
 import sys
