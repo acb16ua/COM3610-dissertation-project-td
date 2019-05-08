@@ -16,7 +16,7 @@ the needs of this project by Uddhav Agarwal***
 """
 import networkx as nx
 import sys
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import os
 import subprocess
 import time
@@ -170,7 +170,7 @@ def decode_output(sol,g,width):
                         decomp.add_edge(v_u,u)
         level_i.append(level)
         # print level
-#    show_graph(decomp,1)
+    # show_graph(decomp,2)
     verify_decomp(g=g,s=decomp,width=width,root=root)
 
 
@@ -202,6 +202,36 @@ def verify_decomp(g, s, width, root):
     sys.stderr.write("Valid treedepth decomp\n")
     sys.stderr.flush()
 
+
+def show_graph(graph, layout, nolabel=0):
+    """ show graph
+    layout 1:graphviz,
+    2:circular,
+    3:spring,
+    4:spectral,
+    5: random,
+    6: shell
+    """
+
+    m = graph.copy()
+    if layout == 99:
+        pos = nx.circular_layout(m)
+    elif layout == 3:
+        pos = nx.spring_layout(m)
+    elif layout == 4:
+        pos = nx.spectral_layout(m)
+    elif layout == 1:
+        pos = nx.random_layout(m)
+    elif layout == 6:
+        pos = nx.shell_layout(m)
+    if not nolabel:
+        nx.draw_networkx_edge_labels(m, pos)
+    nx.draw_networkx_labels(m, pos)
+    nx.draw_networkx_nodes(m, pos)
+    # write_dot(m, "m1.dot")
+    # os.system("dot -Tps m1.dot -o m1.ps")
+    nx.draw(m, pos)
+    plt.show()
 
 def parse_args():
     parser = argparse.ArgumentParser(description='%(prog)s -f instance')
@@ -299,23 +329,23 @@ def main():
                 to = False
                 if lb == 0:
                     ub = i
-                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
-                    encoding_time), sum(solving_time), end=' ')
+                # print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    # encoding_time), sum(solving_time), end=' ')
                 time_out.append(time.time() - cpu_time)
             if rc == 0:
                 to = False
                 if lb == 0:
                     ub = i
-                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
-                    encoding_time), sum(solving_time), end=' ')
+                # print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    # encoding_time), sum(solving_time), end=' ')
                 time_out.append(time.time() - cpu_time)    
             if rc == 10:
                 if to:
                     ub = i
                     lb = i-2
                 decode_output(sol=sol, g=g, width=i)
-                print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
-                    encoding_time), sum(solving_time), end=' ')
+                # print(i-2, lb, ub, to, time.time() - cpu_time, prep_time, sum(
+                    # encoding_time), sum(solving_time), end=' ')
                 td_final = i-1
                 lb_final = lb
                 ub_final = ub
